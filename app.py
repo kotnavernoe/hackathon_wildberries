@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flasgger import Swagger
 import pandas as pd
-from datetime import datetime # Changed import
+from datetime import datetime
 import os
 
 app = Flask(__name__)
@@ -97,8 +97,8 @@ def get_ideal_price_api(product_id):
         return jsonify({"error": "Invalid date format. Please use YYYY-MM-DD."}), 400
 
     try:
-        df_a = pd.read_csv('dataset/group_a.csv')
-        df_b = pd.read_csv('dataset/group_b.csv')
+        df_a = pd.read_csv('demo_dataset/group_a.csv')
+        df_b = pd.read_csv('demo_dataset/group_b.csv')
     except FileNotFoundError:
         return jsonify({"error": "Dataset file not found."}), 500
 

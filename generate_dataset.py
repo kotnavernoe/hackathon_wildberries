@@ -19,15 +19,16 @@ def generate_demo_data(num_products=10):
     ]
     data = [header]
 
+    # adjust parameters as needed
     for i in range(1, num_products + 1):
         product_id = i
         sellers_price = round(random.uniform(0, 20), 2)
-        revenues = [round(random.uniform(50.0, 1000.0), 2) for _ in range(7)] # Mon-Sun revenue
-        demands = [round(random.uniform(0.5, 1.5), 2) for _ in range(7)] # Mon-Sun demand percentage (50% to 150%)
-        seasonal_increase = round(random.uniform(0.0, 0.25), 2) # 0% to 25%
-        trust_increase = round(random.uniform(0.0, 0.15), 2) # 0% to 15%
-        elasticity = round(random.uniform(0, 1.0), 2) # Price elasticity is typically negative. Adjusted range.
-        p = round(random.uniform(-0.05, 0.05), 2) # Assuming p is a small percentage adjustment, e.g., -5% to 5%
+        revenues = [round(random.uniform(50.0, 1000.0), 2) for _ in range(7)]
+        demands = [round(random.uniform(0.5, 1.5), 2) for _ in range(7)]
+        seasonal_increase = round(random.uniform(0.0, 0.25), 2)
+        trust_increase = round(random.uniform(0.0, 0.15), 2)
+        elasticity = round(random.uniform(0, 1.0), 2)
+        p = round(random.uniform(-0.05, 0.05), 2)
 
         row = [product_id, sellers_price] + revenues + demands + [seasonal_increase, trust_increase, elasticity, p]
         data.append(row)
