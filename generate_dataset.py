@@ -34,7 +34,6 @@ def generate_demo_data(num_products=10):
     return data
 
 def write_to_csv(filename, data):
-    """Writes data to a CSV file."""
     with open(filename, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerows(data)
